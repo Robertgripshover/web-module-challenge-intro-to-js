@@ -20,6 +20,9 @@ Do the following:
    HINT: no function required
 */
 
+var votingAge = 20
+if(votingAge >= 18){
+console.log(true)};
 
 
 /*
@@ -34,6 +37,13 @@ Do the following:
    HINT: no function required
 */
 
+var firstThing = 1
+var secondThing = 2
+if(firstThing > secondThing){
+var firstThing = 3
+}
+else{console.log('it does not need to change!')}
+console.log(firstThing);
 
 
 
@@ -61,9 +71,9 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-  /*add your code here*/
-}
+function multiply(a, b){
+  return a * b
+};
 
 
 
@@ -77,8 +87,8 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
+function dogYears(age){
+  return age * 7
 }
 
 
@@ -108,29 +118,30 @@ Puppies less than 1 year
    4 - 7 months 5% of their body weight 
    7 - 12 months 4% of their body weight
   
-NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
-NOTE 2: This is a great time to check the tests to see what it expects, versus what is actually 
-        returned from your function. This is an example of the output to look for on each test point. 
-          ● hungryDogFunction › Dog is 1 year and is 5lbs or less
+*/
 
-            expect(received).toBe(expected) // Object.is equality
+function hungryDog(pounds, years){
 
-            Expected: 0.2
-            Received: undefined
+  if(pounds <= 5 && years >= 1){
+    return pounds * 0.05}
+  else if(pounds < 10 && years >= 1){
+    return pounds * 0.04}
+  else if(pounds < 15 && years >= 1){
+    return pounds * 0.03}
+  else if(pounds >= 15 && years >= 1){
+    return pounds * 0.02}
 
-              21 | describe('hungryDogFunction', ()=>{ 
-              22 |   it('Dog is 1 year and is 5lbs or less', ()=>{
-            > 23 |     expect(functions.hungryDog(4, 1)).toBe(0.2);
-                |
-          ^
-              24 |   })
-      
-        Notice the expected and received, expected is what the test is looking for, and received is what was actually returned from this function. You can also see it's passing in two values, the number 4 and the number 1. 
-        So, on this one test, the weight would be 4 pounds, and the age would be 1 years old. It's expecting your function to return a decimal number of 0.2
-*/  
-
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
+  if(years < 0.34){
+    return pounds * 0.1}
+  else if(years < 0.58){
+    return pounds * 0.05}
+  else if(years < 1){
+    return pounds * 0.04}
+   
+  else{
+    console.log('something went wrong')
+  }
+        
 }
 
 
@@ -157,9 +168,22 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 */
 
 function game(user, computer){
-  /*add your code here*/
+  if(user === computer){
+   return "it's a tie";
+ }else if(user === "rock" && computer === "scissors"){
+   return "you win!";
+ }else if(user === "paper" && computer === "rock"){
+   return "you win!";    
+ }else if(user === "scissors" && computer === "paper"){
+   return "you win!";
+ }else if(user === "scissors" && computer === "rock"){
+   return "you lose!";
+ }else if(user === "rock" && computer === "paper"){
+   return "you lose!";    
+ }else if(user === "paper" && computer === "scissors"){
+   return "you lose!";
+ }
 }
-
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
